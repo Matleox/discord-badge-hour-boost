@@ -1,125 +1,169 @@
-# =====================================================
-
-# 🚀 DISCORD PROFILE BADGE & GAME HOURS BOOSTER (2026)
-
-# =====================================================
+# discord-badge-hour-boost
 
 
 
-[1] ENGLISH
-
------------
-
-A lightweight Python tool to boost gameplay hours and games-played stats on your Discord profile without keeping games running.
+inflates your discord profile badges - add hours played and mark games as played.
 
 
 
-CONTACT & SUPPORT:
+## join https://discord.gg/4TbRvjBvSU for support
 
-- Discord Server: https://discord.gg/4TbRvjBvSU
-
-- Discord Direct: @ahm4tz
-
-- Store (Itemsatis): leoaslan0
+**discord:** @ahm4tz | **itemsatis:** leoaslan0
 
 
 
-LOCAL INSTALLATION:
-
-* Requirements: Python 3.10+ (no external libraries needed)
+**how it works:** discord's analytics endpoint (`/api/v9/science`) tracks what games you play and how long you play them. this tool posts the same events the real client does (`launch_game` and `running_game_heartbeat`), but with custom hours and game lists. discord accepts the events (`204`) and they do show up in your badges.
 
 
 
-1. Clone & Enter Folder:
-
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-
-   cd YOUR_REPO
+**status:** verified working and currently unpatched. badges take 1-2 days to update, so don't expect results right away. your token and cookie are stored locally only - nothing leaves your machine. this may break at any time if discord patches the endpoint.
 
 
 
-2. Run Script:
-
-   python spoofer.py
+**important:** this violates discord's tos. use it on accounts you're comfortable losing.
 
 
 
-3. Setup & Usage:
-
-   - Paste your Discord Token and Cookie (cf_clearance) when prompted.
-
-   - Select option 1 from the menu and enter the desired hours.
+## setup
 
 
 
-* How to get Token & Cookie:
-
-  Open discord.com in browser -> Press F12 -> Network tab -> Filter "science" -> Click request -> Copy "authorization" (Token) and "cookie" headers.
+no dependencies - pure python stdlib (needs python 3.10+).
 
 
 
-DISCLAIMER:
+1. run it:
 
-Educational and testing purposes only. Violates Discord ToS. Use at your own risk.
+   ```
 
+   python booster.py
 
-
-
-
-# =====================================================
-
-[2] TÜRKÇE
-
------------
-
-Oyun indirmeden ve bilgisayarı 7/24 açık bırakmadan Discord profilinize oyun saati ve oyun sayısı basmanızı sağlayan pratik Python aracı.
+   ```
 
 
 
-İLETİŞİM & DESTEK:
+2. first run asks for your discord account token. paste it and it gets saved to `science_state.json` (reused after that). the analytics token is fetched automatically from `GET /users/@me?with_analytics_token=true`.
+
+
+
+3. you also need a cookie (`cf_clearance`). on startup it'll ask for one, or you can add/update it later via option `2` (refresh auth). grab the full `cookie` header from any `/science` request in devtools (network tab). it gets saved to `science_state.json`.
+
+
+
+4. **optional: fingerprint for games-played count.** the fingerprint isn't strictly necessary - users have reported getting the games-played badge without setting one. if you want to set it, grab a real `executable_fingerprint` from a `launch_game` request in your client's devtools and add it to `science_state.json` as `"fingerprint": "..."`.
+
+
+
+## menu
+
+
+
+- `1` claim playtime - asks for hours per game, applies to every game
+
+- `2` refresh auth - pulls a fresh analytics token and lets you update the cookie
+
+- `3` set fingerprint - optional, generate an executable_fingerprint (windows only)
+
+- `4` exit
+
+
+
+## how auth works
+
+
+
+- `token` - your account token, entered on first run, saved to `science_state.json`
+
+- `analytics_token` - fetched from `GET /users/@me?with_analytics_token=true`
+
+- `super_props` / heartbeat / launch ids - generated automatically
+
+- `cookie` (cf_clearance) - pasted by hand, via option `2`
+
+- `fingerprint` - optional, only needed for the games-played count (see below)
+
+
+
+badges update on discord's analytics cycle (1-2 days), so don't expect to see results right away.
+
+
+
+## about the fingerprint
+
+
+
+hours work with just your token and cookie. the games-played count might need a real `executable_fingerprint` - we're not 100% sure yet. users have reported getting badges without one, so try it first. if it doesn't work after a few days, grab a real `executable_fingerprint` from a `launch_game` request in your client's devtools and add it to `science_state.json`:
+
+
+
+```json
+
+{ "fingerprint": "Ab5ekw..." }
+
+```
+
+
+
+either way, the tool will post the events - we just want feedback on whether the badges move with or without the fingerprint so we can figure out what's actually required.
+
+
+
+## disclaimer
+
+
+
+this breaks discord's terms of service. use it on accounts you're fine losing.
+
+provided as-is with no warranty.
+
+
+
+## license
+
+
+
+released under the mit license. see [LICENSE](LICENSE).
+
+
+
+---
+
+
+
+## 🇹🇷 TÜRKÇE DESTEK & KULLANIM
+
+
+
+Discord profilinizdeki oyun saatini ve oyun sayısını artırmak için resmi telemetri servisini (`/api/v9/science`) kullanır.
+
+
+
+### İletişim & Destek
 
 - Discord Sunucusu: https://discord.gg/4TbRvjBvSU
 
-- Discord İletişim: @ahm4tz
+- Geliştirici / Destek: @ahm4tz
 
-- Mağaza (İtemsatış): leoaslan0
-
-
-
-YEREL (LOCAL) KURULUM:
-
-* Gereksinimler: Python 3.10+ (ekstra kütüphane gerektirmez)
+- İtemsatış Mağazası: leoaslan0
 
 
 
-1. Repoyu İndirin ve Klasöre Girin:
+### Hızlı Kurulum
 
-   git clone https://github.com/KULLANICI_ADIN/REPO_ADIN.git
+1. Python 3.10+ kurulu olduğundan emin olun (Harici kütüphane gerekmez).
 
-   cd REPO_ADIN
+2. Script'i çalıştırın:
 
+   ```
 
+   python booster.py
 
-2. Script'i Başlatın:
+   ```
 
-   python spoofer.py
+3. İlk açılışta Discord Token'ınızı ve `cf_clearance` cookie değerinizi girin.
 
-
-
-3. Kullanım:
-
-   - İlk açılışta sorulduğunda Discord Token ve Cookie (cf_clearance) bilginizi yapıştırın.
-
-   - Menüden 1'i seçip basmak istediğiniz saat miktarını girin.
+4. Menüden `1` seçeneğini seçerek oyun başına istediğiniz saat miktarını belirleyin.
 
 
 
-* Token ve Cookie Nasıl Alınır?
-
-  Tarayıcıdan discord.com'a girin -> F12 tuşuna basın -> Network (Ağ) sekmesine geçin -> Arama kutusuna "science" yazın -> İsteğe tıklayıp "authorization" (Token) ve "cookie" değerlerini kopyalayın.
-
-
-
-SORUMLULUK REDDİ:
-
-Yalnızca test ve eğitim amaçlıdır. Discord kurallarına (ToS) aykırıdır; tüm sorumluluk kullanıcıya aittir.
+*Not: İstatistiklerin ve rozetlerin Discord profiline yansıması Discord'un veri güncelleme döngüsüne bağlı olarak 1-2 gün sürebilir.*
