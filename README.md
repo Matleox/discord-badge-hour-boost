@@ -1,38 +1,30 @@
-# 🚀 Discord Profile Game & Badge Booster (2026)
+# 🚀 Discord Profile Badge & Game Hours Booster (2026)
 
-A lightweight, cloud-based tool designed to simulate played games and boost gameplay hours directly on your Discord profile without downloading games or running heavy processes on your local PC.
-
----
-
-### 💬 Community & Contact
-
-Need help, have questions, or want more custom methods?
-
-* **Discord Server:** [Join Community](https://discord.gg/4TbRvjBvSU)
-* **Direct Contact:** Add me on Discord: **`@ahm4tz`**
+[English](#-english) | [Türkçe](#-türkçe)
 
 ---
 
-### ✨ Features
+## 🇬🇧 English
 
-* **Cloud-First Execution:** Run seamlessly on GitHub Codespaces or Google Colab without local installation.
-* **Hour Boosting:** Add custom playtime hours across your library in minutes.
-* **Activity & Badge Simulation:** Simulate games played to increase profile statistics.
-* **Lightweight & Fast:** Pure Python implementation targeting Discord telemetry endpoints.
+A lightweight Python tool to boost gameplay hours and games-played stats on your Discord profile without keeping games running.
+
+### 💬 Contact & Support
+* **Discord Server:** [discord.gg/4TbRvjBvSU](https://discord.gg/4TbRvjBvSU)[cite: 1, 9]
+* **Discord:** `@ahm4tz`
+* **Store (İtemsatış):** `leoaslan0`
 
 ---
 
-### 🚀 Quick Start (GitHub Codespaces)
+### 💻 Local Installation
 
-1. Click **Code** -> **Codespaces** -> **Create codespace on main**.
-2. Run the tool in the built-in terminal:
+**Requirements:** Python 3.10+ (no extra libraries required).
+
+1. **Clone & enter folder:**
    ```bash
-   python spoofer.py
-Enter your Discord user token and cf_clearance cookie when prompted.
-
-Select your preferred boost action from the menu.
-
-⚠️ Disclaimer
-This project is for educational and testing purposes only. Manipulating Discord telemetry endpoints violates Discord Terms of Service (Self-botting). Use at your own risk; testing on alternative accounts is strongly advised.
-
-Developed & Maintained by @ahm4tz
+   git clone [https://github.com/YOUR_USERNAME/YOUR_REPO.git](https://github.com/YOUR_USERNAME/YOUR_REPO.git)
+   cd YOUR_REPO
+Run script:Bashpython spoofer.py
+Setup:Enter your Discord Token and Cookie (cf_clearance) when prompted.   Select 1 from the menu and enter the desired hours.   Token & Cookie: Open discord.com in browser -> Press F12 -> Go to Network -> Filter science -> Copy authorization (token) and cookie headers.⚠️ DisclaimerEducational and testing purposes only. Violates Discord ToS. Use at your own risk.   🇹🇷 TürkçeOyun indirmeden ve bilgisayarı 7/24 açık bırakmadan Discord profilinize oyun saati ve oyun sayısı basmanızı sağlayan hafif Python aracı[cite: 1, 8].💬 İletişim & DestekDiscord Sunucumuz: discord.gg/4TbRvjBvSU   Discord: @ahm4tz[cite: 1]İtemsatış Mağazası: leoaslan0[cite: 1]💻 Yerel (Local) KurulumGereksinimler: Python 3.10+ (ekstra kütüphane gerektirmez).   Repoyu indirin ve klasöre girin:Bashgit clone [https://github.com/KULLANICI_ADIN/REPO_ADIN.git](https://github.com/KULLANICI_ADIN/REPO_ADIN.git)
+cd REPO_ADIN
+Script'i başlatın:Bashpython spoofer.py
+Kullanım:İlk açılışta sorulduğunda Discord Token ve Cookie (cf_clearance) bilginizi yapıştırın.   Menüden 1 seçeneğini seçip istediğiniz saati yazın.   Token ve Cookie Alma: Tarayıcıdan discord.com'a girin -> F12 basın -> Network sekmesine geçin -> Arama kutusuna science yazın -> İsteğe tıklayıp authorization (token) ve cookie değerlerini kopyalayın.
